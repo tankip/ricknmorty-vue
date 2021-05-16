@@ -86,3 +86,9 @@ export type CharactersResults = {
 export type CharacterResult = {
   character: Character
 }
+
+export type CountResult = {
+  characters: Info;
+  episodes: Info;
+  locations: Info;
+}
