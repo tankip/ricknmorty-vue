@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-between" v-if="location">
+  <div class="flex flex-row justify-between" v-if="location" @click="viewDetails">
     <h3 class="text-md">{{ location.name }}</h3>
     <div class="">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -17,6 +17,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
+import { useRouter } from "vue-router";
 import { Location } from "@/types";
 
 export default defineComponent({
@@ -26,5 +27,20 @@ export default defineComponent({
       type: Object as PropType<Location>,
     },
   },
+  setup(props) {
+    const router = useRouter();
+    const viewDetails = () => {
+      router.push({
+        name: "LocationDetails",
+        params: {
+          id: props.location.id,
+        },
+      });
+    };
+    return {
+      viewDetails,
+    };
+  }
+    
 });
 </script>

@@ -22,7 +22,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/locations/:id",
-    name: "Location Details",
+    name: "LocationDetails",
     component: LocationDetails,
   },
 ];

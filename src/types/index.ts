@@ -74,3 +74,7 @@ export type Locations = {
 export type LocationsResults = {
   locations: Locations;
 };
+
+export type LocationResult = {
+  location: Location
+}
