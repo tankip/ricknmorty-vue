@@ -78,3 +78,11 @@ export type LocationsResults = {
 export type LocationResult = {
   location: Location
 }
+
+export type CharactersResults = {
+  characters: Characters;
+};
+
+export type CharacterResult = {
+  character: Character
+}
