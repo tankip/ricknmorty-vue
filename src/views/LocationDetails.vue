@@ -1,25 +1,26 @@
 <template>
   <Button @click="goBack">Go back</Button>
+  <div class="mb-2">Location Details</div>
   <DetailsCard v-if="location">
     <DetailsContent>
-      <h3 class="text-gray-400 uppercase">Name</h3>
-      <h2 class="font-semibold">{{ location.name }}</h2>
+      <div class="text-gray-400 uppercase">Name</div>
+      <div class="font-semibold">{{ location.name }}</div>
     </DetailsContent>
     <DetailsContent>
-      <h3 class="text-gray-400 uppercase">Dimension</h3>
-      <h2 class="font-semibold">{{ location.dimension }}</h2>
+      <div class="text-gray-400 uppercase">Dimension</div>
+      <div class="font-semibold">{{ location.dimension }}</div>
     </DetailsContent>
     <DetailsContent>
-      <h3 class="text-gray-400 uppercase">Type</h3>
-      <h2 class="font-semibold">{{ location.type }}</h2>
+      <div class="text-gray-400 uppercase">Type</div>
+      <div class="font-semibold">{{ location.type }}</div>
     </DetailsContent>
     <DetailsContent>
-      <h3 class="text-gray-400 uppercase">Created</h3>
-      <h2 class="font-semibold">{{ new Date(location.created).toLocaleDateString("en-US") }}</h2>
+      <div class="text-gray-400 uppercase">Created</div>
+      <div class="font-semibold">{{ new Date(location.created).toLocaleDateString("en-US") }}</div>
     </DetailsContent>
   </DetailsCard>
   <div class="mt-4" v-if="location?.residents.length">
-      <h3 class="mb-2">Residents</h3>
+      <div class="mb-2">Residents</div>
       <CharactersContainer :characters="location.residents" />
   </div>
   <Loading v-if="loading">loading... please wait</Loading>
